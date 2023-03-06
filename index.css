@@ -8,11 +8,11 @@
 body {
     font-family: 'Work Sans', sans-serif;
     background-color: black;
-    color: antiquewhite;
+    color: white    ;
 
 }
 
-.container{
+.headerContainer{
     max-width: 1215px;
     margin: 0px auto;
     padding: 0 15px;
@@ -122,6 +122,8 @@ body {
     font-size: 40px;
     line-height: 150%;
     color: white;
+    max-width: 800px;
+    padding-left: 310px;
 
 }
 .clientsTitle span{
@@ -130,10 +132,116 @@ body {
 
 }
 .clientBody{
+    margin-top: 95px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.worksLogo {
+    height: 300px;
+    border-radius: 20px;
+
+}
+.worksLogo img{
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 100%;
 
 }
 
-.clientItem{
+.cardText span{
+    color: #ffff00;
+}
+
+.works{
+    padding: 80px 300px 120px;
+}
+
+.worksTitle{
+    font-weight: 300;
+    font-size: 40px;
+    color: rgba(227,228,230,0.55);
 
 }
+.worksTitle span{
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+}
+
+.worksBody{
+    margin-top: 95px;
+}
+
+.card{
+    display: flex;
+    gap: 32px;
+}
+/*добавить в класс если нужно с другой стороны*/
+.card_r{
+    flex-direction: row-reverse;
+}
+
+.card::not(:last-child){
+    margin-bottom: 97px;
+}
+.cardInfo{
+    flex: 1 1 auto;
+    align-self: flex-end;
+}
+
+.cardTag{
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #e3e4e6;
+    margin-bottom: 16px;
+}
+
+.cardText{
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 150%;
+    color: rgba(227,228,230,0.55);
+    margin-bottom: 24px;
+}
+
+.cardButton{
+    display: inline-block;
+    margin-top: 32px;
+    padding: 8px 48px 8px 16px;
+    border: 1px solid rgba(227,228,230,0.55);
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+  /*  background:transparent url(/img/arrow.svg) right 15px center no-repeat;*/
+}
+.cardButton::before{
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top:50%;
+    right: 16px;
+    transform: translateY(-50%);
+    background:transparent url(/img/arrow.svg) center center no-repeat;
+}
+
+.cardButton:hover{
+    background: linear-gradient(99.05deg, #BC3CD8 0.07%,#C54B8C 106.32%);
+    border: 1px solid white;
+}
+
+.cardButton:hover::before{
+    background:transparent url(/img/arrow-hover.svg) center center no-repeat;
+}
+
+
+
+
 
