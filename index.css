@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,regular,600&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: black;
+    color: antiquewhite;
+
+}
+
+.container{
+    max-width: 1215px;
+    margin: 0px auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header{
+    padding: 35px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: black;
+}
+
+.logo{
+    height: 100px;
+}
+
+
+.menuLink{
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #e3e4e6;
+    text-decoration: none;
+    position: relative;
+}
+.menuLink:hover {
+    background: linear-gradient(99.05deg, #BC3CD8 0.07%,#C54B8C 106.32%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+}
+
+.menuLink:hover::after{
+    opacity: 1;
+    visibility: visible;
+}
+.menuLink::after{
+    content: '';
+    width: 9px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menuList{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.hero{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.heroTitle{
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: rgba(227,228,230,0.55);
+}
+
+.hero span{
+   font-weight: 600; 
+   color: #ffff00;
+}
+.heroButton{
+  
+    border: none;
+    width: 40px;
+    height: 40px;
+    background: transparent url(/img/arrow.svg) center center no-repeat; 
+    transform:  translateX(-50%) rotate(90deg);
+    position: absolute;
+    left: 50%;
+    bottom: 42px;
+    cursor: pointer;
+}
+
+
+.client{
+    padding: 80px 130px;
+
+}
+
+.clientsTitle{
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 150%;
+    color: white;
+
+}
+.clientsTitle span{
+    font-weight: 300;
+    color: gray;
+
+}
+.clientBody{
+
+}
+
+.clientItem{
+
+}
+
