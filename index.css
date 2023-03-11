@@ -164,6 +164,7 @@ body {
 
 .works{
     padding: 80px 300px 120px;
+    scroll-margin-top: 100px;
 }
 
 .worksTitle{
@@ -332,12 +333,7 @@ body {
 	font-weight: 600;
 	color: black;
 }
-
-.works, .about {
-	scroll-margin-top: 30px;
+.about{
+    scroll-margin-top: 100px;
 }
-
-
-
-
 
