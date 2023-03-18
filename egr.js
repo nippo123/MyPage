@@ -1,22 +1,29 @@
 const unpInput = document.getElementById('unp');
 const nameInput = document.getElementById('name');
 const fullNameInput = document.getElementById('full_name');
+const url = 'https://www.portal.nalog.gov.by/grp/getData';
+
+
 
 unpInput.addEventListener('input', function(event) {
-  const unpValue = event.target.value;
-  
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log(xhttp.responseText);
-    } else {
-      console.log("error")
-    }
-  };
-  const url = `https://www.portal.nalog.gov.by/grp/getData?unp=${unpValue}&charset=UTF-8&type=json`;
-  xhttp.open("GET", url, true);
-  xhttp.send();
-  console.log(xhttp);
+
+    const unp = event.target.value;
+    if (unp.length < 9) return ; 
+    const params = `?unp=${unp}&charset=UTF-8&type=json`;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url + params);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        const data = JSON.parse(xhr.responseText);
+        console.log(data);
+      } else {
+        console.error('Error:', xhr.status);
+      }
+    };
+    xhr.send();
+    console.log(xhr);
+
 
   
   
