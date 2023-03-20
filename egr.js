@@ -1,39 +1,24 @@
 const unpInput = document.getElementById('unp');
 const nameInput = document.getElementById('name');
 const fullNameInput = document.getElementById('full_name');
-const url = 'https://www.portal.nalog.gov.by/grp/getData';
 
+import express from "express";
+const app = express();
 
 
 unpInput.addEventListener('input', function(event) {
-
-    const unp = event.target.value;
-    if (unp.length < 9) return ; 
-    const params = `?unp=${unp}&charset=UTF-8&type=json`;
-
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url + params);
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        const data = JSON.parse(xhr.responseText);
-        console.log(data);
-      } else {
-        console.error('Error:', xhr.status);
-      }
-    };
-    xhr.send();
-    console.log(xhr);
-
-
+  const unpValue = event.target.value;
   
-  
-  /*fetch(url)
+  const url = `https://www.portal.nalog.gov.by/grp/getData?unp=${unpValue}&charset=UTF-8&type=json`;
+  const app = express();
+  app.use(cors({
+   origin:"https://www.portal.nalog.gov.by",
+  }))
+  fetch(url)
     .then(response => response.json())
     .then(data => {
-      nameInput.value = data.name;
-      fullNameInput.value = data.full_name;
+      nameInput.value = data.VNAIMP;
+      fullNameInput.value = data.VNAIMK;
     })
-    .catch(error => console.error(error));*/
+    .catch(error => console.error(error));
 });
-
-
